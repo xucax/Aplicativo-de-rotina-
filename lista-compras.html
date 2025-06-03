@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista de Compras - Hipertrofia 2800kcal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">guia simples para compras</div>
+    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lista-compras.html" class="active">Lista de Compras</a></li>
+      <li><a href="dieta-cardapio.html">Dieta & Cardápio</a></li>
+      <li><a href="treino-ppl.html">Treino PPL</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Lista de Compras</h1>
+    <p>Itens essenciais para sua dieta de 2800 kcal focada em hipertrofia.</p>
+
+    <section>
+      <h2>Proteínas</h2>
+      <ul>
+        <li>Peito de frango</li>
+        <li>Carne vermelha (patinho, coxão mole)</li>
+        <li>Ovos</li>
+        <li>Atum enlatado</li>
+        <li>Queijo cottage</li>
+        <li>Whey protein (se usar suplemento)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Carboidratos</h2>
+      <ul>
+        <li>Arroz integral</li>
+        <li>Batata doce</li>
+        <li>Pão integral</li>
+        <li>Aveia</li>
+        <li>Macarrão integral</li>
+        <li>Feijão</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Gorduras & Extras</h2>
+      <ul>
+        <li>Azeite de oliva</li>
+        <li>Castanhas (nozes, amêndoas)</li>
+        <li>Abacate</li>
+        <li>Amendoim</li>
+        <li>Óleo de coco</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Vegetais & Verduras</h2>
+      <ul>
+        <li>Brócolis</li>
+        <li>Espinafre</li>
+        <li>Alface</li>
+        <li>Tomate</li>
+        <li>Cenoura</li>
+        <li>Abobrinha</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.innerHTML = navLinks.classList.contains('open') ? '&times;' : '&#9776;';
+    });
+  </script>
+</body>
+</html>

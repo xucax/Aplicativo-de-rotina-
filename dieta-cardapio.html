@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dieta & Cardápio - Hipertrofia 2800kcal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Cardápio</div>
+    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lista-compras.html">Lista de Compras</a></li>
+      <li><a href="dieta-cardapio.html" class="active">Dieta & Cardápio</a></li>
+      <li><a href="treino-ppl.html">Treino PPL</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Dieta & Cardápio</h1>
+    <p>Plano alimentar focado em 2800 kcal para hipertrofia, simples e acessível.</p>
+
+    <section>
+      <h2>Macronutrientes Diários</h2>
+      <ul>
+        <li><strong>Proteínas:</strong> 2g/kg de peso corporal</li>
+        <li><strong>Carboidratos:</strong> 3-5g/kg</li>
+        <li><strong>Gorduras:</strong> 0.8-1g/kg</li>
+        <li><strong>Calorias totais:</strong> Aproximadamente 2800 kcal</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Exemplo de Cardápio Diário</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Refeição</th>
+            <th>Alimentos</th>
+            <th>Observações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Café da Manhã</td>
+            <td>Ovos mexidos (3 unidades), pão integral (2 fatias), aveia (30g)</td>
+            <td>Inclua café ou chá sem açúcar</td>
+          </tr>
+          <tr>
+            <td>Lanche da Manhã</td>
+            <td>Whey protein (1 scoop), banana</td>
+            <td>Opção rápida pós-treino ou lanche</td>
+          </tr>
+          <tr>
+            <td>Almoço</td>
+            <td>Peito de frango grelhado, arroz integral, feijão, brócolis</td>
+            <td>Equilíbrio entre proteínas, carbs e fibras</td>
+          </tr>
+          <tr>
+            <td>Lanche da Tarde</td>
+            <td>Queijo cottage, castanhas (amêndoas ou nozes)</td>
+            <td>Boa fonte de proteína e gorduras boas</td>
+          </tr>
+          <tr>
+            <td>Jantar</td>
+            <td>Carne vermelha magra, batata doce, salada verde</td>
+            <td>Evite molhos muito calóricos</td>
+          </tr>
+          <tr>
+            <td>Ceia</td>
+            <td>Iogurte natural ou caseína</td>
+            <td>Ajuda na recuperação muscular durante o sono</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Dicas Gerais</h2>
+      <ul>
+        <li>Hidrate-se bem durante o dia.</li>
+        <li>Prefira alimentos in natura e minimamente processados.</li>
+        <li>Controle o tamanho das porções para evitar excessos.</li>
+        <li>Inclua vegetais em todas as refeições para fibras e micronutrientes.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.innerHTML = navLinks.classList.contains('open') ? '&times;' : '&#9776;';
+    });
+  </script>
+</body>
+</html>

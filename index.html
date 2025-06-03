@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hipertrofia 2800kcal - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Introdução</div>
+    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="lista-compras.html">Lista de Compras</a></li>
+      <li><a href="dieta-cardapio.html">Dieta & Cardápio</a></li>
+      <li><a href="treino-ppl.html">Treino PPL</a></li>
+    </ul>
+  </nav>
+  
+  <div id="password-overlay">
+  <div class="password-box">
+    <h2>🔐 Acesso Restrito</h2>
+    <input type="password" id="password-input" placeholder="Digite a senha..." />
+    <button id="enter-btn">Entrar</button>
+    <p id="error-msg" class="hidden">Senha incorreta! 😤</p>
+  </div>
+</div>
+
+  <main class="container">
+    <h1>Bem-vindo 🤫</h1>
+    <p>O segredo tá aqui</p>
+
+    <section>
+      <h2>O que você encontra aqui</h2>
+      <ul>
+        <li>Cardápio e dieta para hipertrofia de 2800 kcal diárias</li>
+        <li>Plano de treino PPL com foco em força e hipertrofia</li>
+        <li>Lista de compras prática para facilitar sua organização</li>
+        <li>Dicas de nutrição, suplementação e recuperação</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Resumo do Plano de Treino</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Treino</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Segunda</td><td>Push (Peito, Ombro, Tríceps)</td></tr>
+          <tr><td>Terça</td><td>Pull (Costas, Bíceps, Trapézio)</td></tr>
+          <tr><td>Quarta</td><td>Legs (Quadríceps, Posterior, Glúteos, Panturrilha)</td></tr>
+          <tr><td>Quinta</td><td>Push (varia estímulos e planos)</td></tr>
+          <tr><td>Sexta</td><td>Pull (varia alavancas e pegadas)</td></tr>
+          <tr><td>Sábado</td><td>Legs (varia foco e carga)</td></tr>
+          <tr><td>Domingo</td><td>Descanso ou cardio leve</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.innerHTML = navLinks.classList.contains('open') ? '&times;' : '&#9776;';
+    });
+  </script>
+  
+  <script>
+  const overlay = document.getElementById('password-overlay');
+  const enterBtn = document.getElementById('enter-btn');
+  const passwordInput = document.getElementById('password-input');
+  const errorMsg = document.getElementById('error-msg');
+  const correctPassword = 'segredo1234';
+
+  // Verifica se a senha já foi salva no localStorage
+  window.onload = function () {
+    const accessGranted = localStorage.getItem('access_granted');
+
+    if (accessGranted === 'true') {
+      overlay.style.display = 'none';
+    } else {
+      overlay.style.display = 'flex';
+    }
+  };
+
+  // Verifica a senha e salva no localStorage
+  enterBtn.addEventListener('click', function () {
+    const input = passwordInput.value;
+
+    if (input === correctPassword) {
+      localStorage.setItem('access_granted', 'true');
+      overlay.style.display = 'none';
+    } else {
+      errorMsg.classList.remove('hidden');
+    }
+  });
+</script>
+  
+  <script>
+  function logout() {
+    localStorage.removeItem('access_granted');
+    location.reload();
+  }
+</script>
+  
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('sw.js')
+        .then(reg => console.log('✅ Service Worker registrado:', reg.scope))
+        .catch(err => console.error('❌ Erro no Service Worker:', err));
+    });
+  }
+</script>
+  
+  <button onclick="logout()" style="margin-top: 2rem;">🔒 Sair</button>
+  
+</body>
+</html>

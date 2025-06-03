@@ -1,0 +1,20 @@
+{
+  "name": "Rotina pessoal",
+  "short_name": "Hipertrofia",
+  "start_url": "./",
+"display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#BA55D3",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
